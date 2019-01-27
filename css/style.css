@@ -34,7 +34,7 @@ input[type="submit"],input[type="reset"],.agileits_mail_grid_lft_grid1 ul li a,.
 }
 /*-- banner --*/
 .banner{
-	background:url(../images/banner.jpg) no-repeat 0px 0px;
+	background:url(../images/books.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -123,6 +123,11 @@ input[type="submit"],input[type="reset"],.agileits_mail_grid_lft_grid1 ul li a,.
 	background:url(../images/img-sp.png) no-repeat -141px 4px;
 	display:block;
 }
+
+.agileinfo_social_icons1 li a.mail{
+	display:block;
+}
+
 .agileinfo_social_icons1 li a.facebook:hover{
 	background:url(../images/img-sp.png) no-repeat 5px 5px #3b5998;
 	display:block;
@@ -139,6 +144,10 @@ input[type="submit"],input[type="reset"],.agileits_mail_grid_lft_grid1 ul li a,.
 	background:url(../images/img-sp.png) no-repeat -141px 4px #bd081c;
 	display:block;
 }
+.agileinfo_social_icons1 li a.mail:hover{
+	display:block;
+}
+
 .navbar-nav > li > a {
     padding: 24px 20px;
 }
@@ -158,7 +167,7 @@ input[type="submit"],input[type="reset"],.agileits_mail_grid_lft_grid1 ul li a,.
 	font-size: 5em;
 }
 .w3agile_banner_info a{
-	color:#FFD900;
+	color:#FFC0CB;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
@@ -221,7 +230,7 @@ input[type="submit"],input[type="reset"],.agileits_mail_grid_lft_grid1 ul li a,.
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #212121;
-    background-color: #FFD900;
+    background-color: #FFC0CB;
 }
 /* Bounce To Bottom */
 .hvr-bounce-to-bottom {
@@ -247,7 +256,7 @@ input[type="submit"],input[type="reset"],.agileits_mail_grid_lft_grid1 ul li a,.
   left: 0;
   right: 0;
   bottom: 0;
-  background:#FFD900;
+  background:#FFC0CB;
   -webkit-transform: scaleY(0);
   transform: scaleY(0);
   -webkit-transform-origin: 50% 0;
@@ -317,7 +326,7 @@ input[type="submit"],input[type="reset"],.agileits_mail_grid_lft_grid1 ul li a,.
 .agileits_banner_bottom_grid_l p i{
 	display:block;
 	margin-bottom:1em;
-	color:#FFD900;
+	color:#FFC0CB;
 }
 .agileits_banner_bottom_grids{
 	margin:6em 0 0;
@@ -353,7 +362,7 @@ input[type="submit"],input[type="reset"],.agileits_mail_grid_lft_grid1 ul li a,.
 .agile_banner_bottom1_right h4{
 	text-transform:capitalize;
 	font-size:1.8em;
-	color:#FFD900;
+	color:#FFC0CB;
 }
 .agile_banner_bottom1_right p{
 	margin:1em 0 3em;
@@ -367,7 +376,7 @@ input[type="submit"],input[type="reset"],.agileits_mail_grid_lft_grid1 ul li a,.
 	text-transform:uppercase;
 }
 .agile_banner_bottom1_right ul li span{
-	color:#FFD900;
+	color:#FFC0CB;
 	padding-right:2em;
 }
 .agile_banner_bottom1_right ul li:last-child{
@@ -499,7 +508,7 @@ input[type="submit"],input[type="reset"],.agileits_mail_grid_lft_grid1 ul li a,.
     position: absolute;
     left: 5%;
     top: 30%;
-    color: #FFD900;
+    color: #FFC0CB;
     font-size: .5em;
     text-transform: capitalize;
     font-family: 'Capriola', sans-serif;
@@ -545,7 +554,7 @@ input[type="submit"],input[type="reset"],.agileits_mail_grid_lft_grid1 ul li a,.
 .w3l_footer_grid h2 a span{
 	display: inline-block;
     padding: .3em .5em;
-    background: #FFD900;
+    background: #FFC0CB;
     color: #212121;
 }
 .w3l_footer_grid p{
@@ -585,7 +594,7 @@ ul.w3_address li a:hover, .agileinfo_footer_grid_nav li a:hover {
     text-decoration: none;
 }
 ul.agileinfo_footer_grid_nav li a span {
-    color: #FFD900;
+    color: #FFC0CB;
     padding-right: 1.5em;
 }
 .w3agile_footer_copy {
@@ -698,7 +707,7 @@ ul.agileinfo_footer_grid_nav li a span {
     color:#FF0000;
 }
 .agileinfo_services_grid1:hover h4{
-	color:#FFD900;
+	color:#FFC0CB;
 }
 .agileinfo_services_grid1 p{
 	color:#999;
@@ -726,7 +735,7 @@ ul.agileinfo_footer_grid_nav li a span {
 .w3agile_services_bottom_grid h3{
 	font-size: 1.4em;
     line-height: 1.5em;
-    color:#FFD900;
+    color:#FFC0CB;
     text-transform: capitalize;
 }
 .w3agile_services_bottom_grid p{
@@ -1119,7 +1128,7 @@ h2.typoh2{
 .agileits_mail_grid_right1 input[type="submit"]{
 	outline: none;
     width: 35%;
-    background: #FFD900;
+    background:  #FFC0CB;
     color: #212121;
     padding: 10px 0;
     font-size: 1em;
@@ -2030,4 +2039,8 @@ h2.typoh2{
 	.agileits_mail_grids1 h4 {
 		font-size: 1.2em;
 	}
+}
+
+.nav ul li:hover > ul {
+  display: block;
 }
