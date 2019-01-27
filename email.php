@@ -7,12 +7,17 @@ if(isset($_POST['submit'])){
     $message = $name . " wrote the following:" . "\n\n" . $_POST['Message'];
     $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['message'];
 
+	$header.= "MIME-Version: 1.0\r\n"; 
+	$header.= "Content-Type: text/html; charset=ISO-8859-1\r\n"; 
+	$header.= "X-Priority: 1\r\n"; 
     $headers = "From:" . $from;
     $headers2 = "From:" . $to;
-    mail($to,$subject,$message,$headers);
+    $status = mail($to,$subject,$message,$headers);
     mail($from,$subject,$message2,$headers2); // sends a copy of the message to the sender
-    echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
-    // You can also use header('Location: thank_you.php'); to redirect to another page.
-    // You cannot use header and echo together. It's one or the other.
-    }
+    if($status)
+	{ 
+		echo '<p>Your mail has been sent!</p>';
+	} else { 
+		echo '<p>Something went wrong, Please try again!</p>'; 
+	}
 ?>
