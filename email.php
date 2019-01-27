@@ -1,49 +1,24 @@
-if(isset($_POST['submit'])) {
+<?php
+@extract($_POST);
+$admin = 'mrgndwnn@gmail.com' ; // Change to your admin email 'from' address
+$subject = stripslashes($Subject);; //Your email subject
+$name = stripslashes($Name); //can be stripslashes('name');
+$email = stripslashes($Email);
+// Your HTML message with table, links and images
+$message = stripslashes($Message);
 
-if(trim($_POST['Name']) == '') {
-    $hasError = true;
-} else {
-    $name = trim($_POST['Name']);
+// To send HTML mail, the Content-type header must be set
+$headers = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+// Additional headers as http://php.net/manual/en/function.mail.php
+$headers .= 'From: Your Name <mail@your-domain.com>' . "\r\n";
+//ACTIVE mail below to $admin (you) and $email (the other person)
+mail( $admin, "Feedback: $subject", "$name $email", "From: $admin>" );
+$send_contact=mail("$name <$email>", "Feedback: $subject", $message, $headers );
+if($send_contact){
+echo "Thanks," . $name. ", I have sent you an email with the information.";
 }
-
-if(trim($_POST['Subject']) == '') {
-    $hasError = true;
-} else {
-    $subject = trim($_POST['Subject']);
+else {
+echo "ERROR";
 }
-
-//Check to make sure sure that a valid email address is submitted 
-if(trim($_POST['email']) == '' && preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/",$_POST['Email']))  {
-    $hasError = true;
-}  else {
-    $email = trim($_POST['Email']);
-}
-if(trim($_POST['Message']) == '') {
-    $hasError = true;
-} else {
-    if(function_exists('stripslashes')) {
-        $comments = stripslashes(trim($_POST['Message']));
-    } else {
-        $comments = trim($_POST['Message']);
-    }
-}
-
-//----------------------Email Validation-----------------//
-    function EmVal($e)
-    {
-        return preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/",$e);
-    }
-
-
-//If there is no error, send the email
-if(!isset($hasError)) {
-        $emailTo = 'mrgndwnn@gmail.com';
-        $body = "Name: $name \n\nEmail: $email \n\nSubject: $subject \n\nComments:\n $comments \n\n";
-        $headers = 'From: <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
-
-        mail($emailTo, $subject, $body, $headers);
-        $emailSent = true;}
-
-
-}
- ?>
+?>
