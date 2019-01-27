@@ -1,24 +1,18 @@
-<?php
-@extract($_POST);
-$admin = 'mrgndwnn@gmail.com' ; // Change to your admin email 'from' address
-$subject = stripslashes($Subject);; //Your email subject
-$name = stripslashes($Name); //can be stripslashes('name');
-$email = stripslashes($Email);
-// Your HTML message with table, links and images
-$message = stripslashes($Message);
+<?php 
+if(isset($_POST['submit'])){
+    $to = "mrgndwnn@gmail.com"; // this is your Email address
+    $from = $_POST['Email']; // this is the sender's Email address
+    $name = $_POST['Name'];
+    $subject = $_POST['Subject'];
+    $message = $name . " wrote the following:" . "\n\n" . $_POST['Message'];
+    $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['message'];
 
-// To send HTML mail, the Content-type header must be set
-$headers = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-// Additional headers as http://php.net/manual/en/function.mail.php
-$headers .= 'From: Your Name <mail@your-domain.com>' . "\r\n";
-//ACTIVE mail below to $admin (you) and $email (the other person)
-mail( $admin, "Feedback: $subject", "$name $email", "From: $admin>" );
-$send_contact=mail("$name <$email>", "Feedback: $subject", $message, $headers );
-if($send_contact){
-echo "Thanks," . $name. ", I have sent you an email with the information.";
-}
-else {
-echo "ERROR";
-}
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    // You cannot use header and echo together. It's one or the other.
+    }
 ?>
