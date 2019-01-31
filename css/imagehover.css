@@ -1,19 +1,10 @@
-/*
- * ImageHover.css - http://www.imagehover.io
- * Version 1.0
- * Author: Ciarán Walsh
-
- * Made available under a MIT License:
- * http://www.opensource.org/licenses/mit-license.php
-
- */
 [class^='imghvr-'],
 [class*=' imghvr-'] {
   position: relative;
   display: inline-block;
   margin: 0px;
   max-width: 100%;
-  background-color:#FF0000;
+  background-color:#DB7093;
   color: #fff;
   overflow: hidden;
   -webkit-backface-visibility: hidden;
@@ -29,7 +20,7 @@
 }
 [class^='imghvr-'] figcaption,
 [class*=' imghvr-'] figcaption {
-  background-color:#FF0000;
+  background-color:#DB7093;
   padding: 4em 2em 2em;
   position: absolute;
   top: 0;
@@ -586,7 +577,7 @@
 [class*=' imghvr-shutter-in-']:after,
 [class^='imghvr-shutter-in-']:before,
 [class*=' imghvr-shutter-in-']:before {
-  background:#FF0000;
+  background:#DB7093;
   position: absolute;
   content: '';
 }
