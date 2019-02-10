@@ -2,7 +2,7 @@
 require("sendgrid-php/sendgrid-php.php");
 
 
-echo $_GET["Message"];
+echo $_REQUEST["Message"];
 
 $request_body = json_decode('{
   "personalizations": [
