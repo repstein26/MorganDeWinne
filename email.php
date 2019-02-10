@@ -11,7 +11,7 @@ $request_body = json_decode('{
     {
       "to": [
         {
-          "email": "repstein95@gmail.com"
+          "email": "mrgndwnn@gmail.com"
         }
       ],
       "subject": "' . $subject . '"
