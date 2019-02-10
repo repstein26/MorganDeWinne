@@ -1,12 +1,11 @@
 <?php 
 require("sendgrid-php/sendgrid-php.php");
-$email = new \SendGrid\Mail\Mail();
+
+$email = new \SendGrid\Mail\Mail(); 
 $email->setFrom("repstein95@gmail.com", "Example User");
 $email->setSubject("Sending with SendGrid is Fun");
 $email->addTo("repstein95@gmail.com", "Example User");
-$email->addContent(
-    "text/plain", "and easy to do anywhere, even with PHP"
-);
+$email->addContent("text/plain", "and easy to do anywhere, even with PHP");
 $email->addContent(
     "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
 );
@@ -17,6 +16,6 @@ try {
     print_r($response->headers());
     print $response->body() . "\n";
 } catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
+    echo 'Caught exception: '. $e->getMessage() ."\n";
 }
 ?>
