@@ -1,8 +1,12 @@
 <?php 
 require("sendgrid-php/sendgrid-php.php");
 
+
+if(isset($_POST['submit'])){
 $subject = $_POST['Subject'];
-echo $subject
+echo $subject;
+}
+
 $request_body = json_decode('{
   "personalizations": [
     {
