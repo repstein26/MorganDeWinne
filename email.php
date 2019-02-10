@@ -3,8 +3,7 @@ require("sendgrid-php/sendgrid-php.php");
 
 
 $subject = $_POST['Subject'];
-echo $subject;
-
+echo "HELLO!!!";
 
 $request_body = json_decode('{
   "personalizations": [
