@@ -18,7 +18,7 @@ $request_body = json_decode('{
     }
   ],
   "from": {
-    "email":  "repstein95@gmail.com"
+    "email":  "' . $from . '"
   },
   "content": [
     {
