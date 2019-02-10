@@ -4,7 +4,7 @@ require("sendgrid-php/sendgrid-php.php");
 $from = $_POST['Email']; // this is the sender's Email address
 $name = $_POST['Name'];
 $subject = $_POST['Subject'];
-$message = $name . " wrote the following:" . "\n\n" . $_POST['Message'];
+$message = $_POST['Message'];
 
 $request_body = json_decode('{
   "personalizations": [
@@ -18,12 +18,12 @@ $request_body = json_decode('{
     }
   ],
   "from": {
-    "email": "' . $from . '"
+    "email":  "repstein95@gmail.com"
   },
   "content": [
     {
       "type": "text/plain",
-      "value": "message..."
+      "value": "' . $message .'"
     }
   ]
 }');
