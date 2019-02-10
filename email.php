@@ -6,10 +6,10 @@ $request_body = json_decode('{
     {
       "to": [
         {
-          "email": "repstein95@gmail.com"
+          "email": "repstein95@gmail.com
         }
       ],
-      "subject": "Hello World from the SendGrid PHP Library!"
+      "subject": $_POST['Subject'];
     }
   ],
   "from": {
