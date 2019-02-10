@@ -1,6 +1,7 @@
 <?php 
 require("sendgrid-php/sendgrid-php.php");
 
+$allPostVars = $application->request->getParsedBody();
 $request_body = json_decode('{
   "personalizations": [
     {
@@ -9,7 +10,7 @@ $request_body = json_decode('{
           "email": "repstein95@gmail.com
         }
       ],
-      "subject": ' + $_POST['Subject'] + '
+      "subject": $allPostVars[\'Subject\'];
     }
   ],
   "from": {
