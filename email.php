@@ -1,33 +1,23 @@
 <?php 
 require("sendgrid-php/sendgrid-php.php");
 
-$allPostVars = $application->request->getParsedBody();
-$request_body = json_decode('{
-  "personalizations": [
-    {
-      "to": [
-        {
-          "email": "repstein95@gmail.com
-        }
-      ],
-      "subject": $allPostVars[\'Subject\'];
-    }
-  ],
-  "from": {
-    "email": "repstein95@gmail.com"
-  },
-  "content": [
-    {
-      "type": "text/plain",
-      "value": "Hello, Email!"
-    }
-  ]
-}');
+if(isset($_POST['submit'])){
+	$to = "mrgndwnn@gmail.com"; // this is your Email address
+    $from = $_POST['Email']; // this is the sender's Email address
+    $name = $_POST['Name'];
+    $subject = $_POST['Subject'];
+    $message = $name . " wrote the following:" . "\n\n" . $_POST['Message'];
 
 $apiKey = getenv('SENDGRID_API_KEY');
 $sg = new \SendGrid($apiKey);
 
-$response = $sg->client->mail()->send()->post($request_body);
+ $mail     = new SendGrid\Email();
+ $mail->addTo($to)->
+    setFrom($from)->
+    setSubject($subject)->
+    setText($message);
+
+$response = $sg->client->mail()->send($mail);
 echo $response->statusCode();
 echo $response->body();
 echo $response->headers();
