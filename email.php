@@ -18,12 +18,12 @@ $request_body = json_decode('{
     }
   ],
   "from": {
-    "email": "repstein95@gmail.com"
+    "email": "' . $from . '"
   },
   "content": [
     {
       "type": "text/plain",
-      "value": "' . $message .'"
+      "value": "message..."
     }
   ]
 }');
